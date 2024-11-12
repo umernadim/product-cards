@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto Condensed", sans-serif;
+    overflow-x: hidden;
+}
+
+/* code for banner  */
+.header {
+    position: relative;
+    text-align: center;
+    background: url('https://waltonbd.com/image/catalog/category-banner/fan/gloria-new-color.gif') no-repeat center center; 
+    background-size: cover;
+    color: white;
+    margin-top: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .header{
+        background: url('https://i.pinimg.com/control/474x/70/6f/ce/706fce0b0051f6c201787b3945465bc8.jpg') no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.inner-header {
+    height: 55vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.waves {
+    position: relative;
+    width: 100%;
+    height: 15vh;
+    margin-bottom: -7px;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+/* Animation */
+
+.parallax>use {
+    animation: move-forever 25s cubic-bezier(.55, .5, .45, .5)infinite;
+}
+
+.parallax>use:nth-child(1) {
+    animation-delay: -2s;
+    animation-duration: 7s;
+}
+
+.parallax>use:nth-child(2) {
+    animation-delay: -3s;
+    animation-duration: 10s;
+}
+
+.parallax>use:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 13s;
+}
+
+.parallax>use:nth-child(4) {
+    animation-delay: -5s;
+    animation-duration: 20s;
+}
+
+@keyframes move-forever {
+    0% {
+        transform: translate3d(-90px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(85px, 0, 0);
+    }
+}
+
+@media (max-width: 768px) {
+    .waves {
+        height: 40px;
+        min-height: 40px;
+    }
+
+    .content {
+        height: 30vh;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+}
+
+
+
+
+/* code for card-heading  */
+.heading-container {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding-bottom: 40px;
+    margin-top: 1.4rem;
+}
+.product-heading {
+    font-size: 2.2rem;
+    font-family: 'Poppins',sans-serif;
+    border-bottom: 3px solid #222;
+    width: 360px;
+}
+
+/* Container for product cards */
+#card-container {
+    display: flex;
+    gap: 1.8rem;
+    margin: 0.5rem 4rem 2rem 4rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Product Card */
+.product-card {
+    width: 260px;
+    background-color: #fff;
+    border: 2px solid rgb(231, 229, 229);
+    border-radius: 15px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: left;
+    box-sizing: border-box;
+    transition: 0.4s ease;
+}
+
+
+.product-card:hover {
+    transform: scale(1.02);
+}
+
+/* Image Container */
+.image-container {
+    position: relative;
+}
+.image-container img {
+    width: 100%;
+    height: 180px;
+    border-radius: 15px;
+}
+
+/* Favorite Star */
+.favorite-star {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: #000;
+    cursor: pointer;
+}
+.favorite-star.active{
+    color: red;
+}
+
+/* Code to show favorite star message popup */
+#toast-container {
+    position: fixed;
+    top: 5%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+}
+
+.toast {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.toast.show {
+    opacity: 1;
+}
+
+/* Product Info */
+.product-info h2 {
+    margin: 15px 0 10px;
+    font-size: 18px;
+}
+.product-info p {
+    font-size: 12px;
+    color: #555;
+}
+
+/* Price and Order Button */
+.price-order {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+.price {
+    font-size: 17px;
+    font-weight: bold;
+}
+.details {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+.details:hover {
+    background-color: #393939;
+}
+
+/* Code for modal-description-popup */
+
+body.blur-background::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    z-index: 9998;
+}
+
+.container-description {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+    overflow: hidden;
+}
+.container-description.active {
+    display: flex; 
+}
+
+/* Modal Content Styles */
+.container {
+    height: 450px;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff; 
+    gap: 2rem;
+}
+
+.product-img img {
+    max-width: 100%;
+    height: 450px;
+    display: block;
+    margin: 0 ;
+}
+
+.description-part {
+    flex: 1;
+    max-width: 50%;
+}
+#cross-icon {
+    padding: 0.3rem 0.4rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
+}
+.description-part h2 {
+    font-size: 2rem;
+}
+.description-part .text{
+    font-size: 0.858rem;
+    margin-top: -1.3rem;
+    color: gray;
+}
+.description-part .img-description {
+    font-size: 1.14rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.buttons .btn{
+    padding: 0.6rem 0.8rem;
+    margin-top: 0.8rem;
+    font-size: 1rem;
+    border-radius: 0.6rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.buttons .btn i {
+    margin-right: 0.5rem;
+}
+#download-btn{
+    background-color: white;
+}
+#download-btn a{
+    text-decoration: none;
+    color: black;
+}
+#download-btn:hover {
+    background-color: #e3e2e2;
+    color: black;
+}
+
+#cart-btn {
+    background-color: #212121;
+    border: none;
+    color: white;
+}
+#cart-btn:hover {
+    background-color: #464646;
+    color: white;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 835px) {
+    .container {
+        height: 100%;
+        width: 100%;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+        margin: 0;
+        overflow-x: hidden;
+    }
+    .product-img img {
+        height: auto;
+        width: 100%;
+    }
+    .description-part {
+        width: 100%;
+    }
+    .description-part h2 {
+        font-size: 1.5rem;
+    }
+    .description-part p {
+        font-size: 1rem;
+    }
+    .buy-buttons{
+        /* flex-wrap: nowrap; */
+        flex-direction: column;
+        gap: 0.5rem;
+
+    }
+}

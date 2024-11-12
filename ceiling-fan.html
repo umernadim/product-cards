@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Cards</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="ceiling-fan.css">
+</head>
+<body >
+    <!-- code for banner  -->
+
+    <div class="header">
+        <div class="inner-header flex">
+
+        </div>
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                        d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <!-- code for product Card  -->
+
+    <div id="content">
+        <div class="heading-container">
+            <h2 class="product-heading">Product Cards</h2>
+        </div>
+        <div class="card-container" id="card-container">
+        </div> <!-- Container for product cards -->
+    </div>
+
+
+    <!-- Code to show favorite star message popup  -->
+
+    <div id="toast-container">
+        <div id="sample-toast" class="toast"></div>
+    </div>
+
+
+    <!-- Code for modal-description-popup  -->
+
+    <div class="container-description">
+        <div class="container">
+            <div class="img-part">
+                <div class="product-img">
+                    <img src="">
+                </div>
+            </div>
+            <div class="description-part">
+                <span id="cross-icon"><i class="fa-solid fa-xmark"></i></span>
+                <h2>Table fan</h2>
+                <p class="text">Designed and manufactured by FanoFan.</p>
+                <p class="img-description"> </p>
+
+                <p class="price">$40</p>
+                <span class="ratings-star">
+                    <i class="fa-solid fa-star" style="color: #f4ee2a;"></i>
+                    <i class="fa-solid fa-star" style="color: #f4ee2a;"></i>
+                    <i class="fa-solid fa-star" style="color: #f4ee2a;"></i>
+                    <i class="fa-solid fa-star" style="color: #f4ee2a;"></i>
+                    <i class="fa-solid fa-star" style="color: black;"></i>
+                    <span class="ratings-count"></span>
+                </span>
+                <div class="buttons">
+                    <button class="btn" id="cart-btn"><i class="fa-solid fa-cart-shopping"></i><span>Add to
+                            cart</span></button>
+                 
+                    <button class="btn" id="download-btn"> <a href="description file.pdf" download="description file.pdf"><i class="fa-solid fa-download"></i><span>Download</span></a></button>
+                
+                </div>
+            </div>
+        </div>
+    </div> 
+
+
+    
+    <script src="ceiling-fan.js"></script>
+</body>
+
+</html>
